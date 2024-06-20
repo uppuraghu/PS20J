@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+arr = [{Time1:"10:45", Time2:"12:50", Time3:"11:00"}]
+count=0
+for(i of arr){
+    for(j in i){
+        arr=i[j].split(":")
+        if(arr[1]=="00")
+            count++
+    }
+}
+console.log(count)
+
+
+
+let secondArr = [{ Time1: "10:45", Time2: "12:50", Time3: "11:00" }];
+for (i of secondArr) {
+  timeLeft = 0;
+  for (j in i) {
+    let str = i[j].split(":");
+    if (str[1] != 0) {
+      console.log(j + ":", 60 - str[1], "Mins");
+    }
+  }
+}
+
+
+
+let thirdArr = [{ Time1: "10:45", Time2: "12:50", Time3: "11:00" }];
+for (i of thirdArr) {
+  for (j in i) {
+    let str = i[j].split(":");
+    if (str[1] != 0) {
+      if (str[0] == 12) {
+        str[0] = "0" + 1;
+        str[1] = "00";
+      } else {
+        if (str[0] > 9) {
+          str[0]++;
+        } else {
+          str[0] = "0" + (Number(str[0]) + 1);
+        }
+        str[1] = "00";
+      }
+      console.log(str);
+    }
+  }
+}
+    </script>
+</body>
+</html>
